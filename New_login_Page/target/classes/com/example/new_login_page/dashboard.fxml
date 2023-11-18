@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.new_login_page.dashboardController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="590.0" prefWidth="1100.0">
+         <children>
+            <BorderPane layoutX="97.0" layoutY="73.0" prefHeight="600.0" prefWidth="1100.0" style="-fx-background-color: #4682B4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="590.0" prefWidth="203.0" style="-fx-background-color: #4682B4;" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIcon fill="#1e1c1c" glyphName="USER" layoutX="68.0" layoutY="86.0" selectionFill="#1e1c1c" size="7em" />
+                        <Label layoutX="50.0" layoutY="98.0" text="Welcome Back," textFill="#181414">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="usernameLabel" alignment="CENTER" layoutX="12.0" layoutY="115.0" prefHeight="23.0" prefWidth="178.0" text="Sohel" textFill="#302d2d">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Line endX="83.0" layoutX="109.0" layoutY="152.0" startX="-100.0" stroke="WHITE" />
+                        <Button fx:id="dashboard_btn" layoutX="11.0" layoutY="181.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FAC2;" styleClass="nav-btn" text="Dashboard">
+                           <graphic>
+                              <FontAwesomeIcon fill="#181818" glyphName="DASHBOARD" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="availableBooks_btn" layoutX="13.0" layoutY="221.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FAC2;" styleClass="nav-btn" text="Available Books">
+                           <graphic>
+                              <FontAwesomeIcon fill="#131212" glyphName="BOOK" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="purchase_btn" layoutX="13.0" layoutY="261.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FAC2;" styleClass="nav-btn" text="Purchase">
+                           <graphic>
+                              <FontAwesomeIcon fill="#282828" glyphName="SHOPPING_CART" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="logout" layoutX="14.0" layoutY="509.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #B22222;">
+                           <graphic>
+                              <FontAwesomeIcon fill="#151515" glyphName="SIGN_OUT" size="2em" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="sign-out" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="jsonButton" layoutX="13.0" layoutY="301.0" mnemonicParsing="false" onAction="#jsonButtonClicked" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #FAC2;" styleClass="nav-btn" text="JSON">
+                           <graphic>
+                              <FontAwesomeIcon fill="#0b0b0b" glyphName="STAR" size="1.5em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="nav-form" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="dashboard_form" layoutX="92.0" layoutY="125.0" prefHeight="555.0" prefWidth="899.0" style="-fx-background-color: #4682B4;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="13.0" layoutY="12.0" prefHeight="532.0" prefWidth="873.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane prefHeight="154.0" prefWidth="873.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="136.0" prefWidth="244.0" style="-fx-background-color: GRAY;" styleClass="card">
+                                             <children>
+                                                <FontAwesomeIcon fill="#2e2c2c" glyphName="CHECK" layoutX="14.0" layoutY="85.0" selectionFill="#1e1d1d" size="4em" />
+                                                <Label layoutX="69.0" layoutY="98.0" text="Available Books" textFill="#1e1d1d">
+                                                   <font>
+                                                      <Font name="Arial" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="dashboard_AB" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="14.0" prefHeight="17.0" prefWidth="159.0" text="0" textFill="#1b1919">
+                                                   <font>
+                                                      <Font name="Arial" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="315.0" layoutY="10.0" prefHeight="136.0" prefWidth="244.0" style="-fx-background-color: GRAY;" styleClass="card">
+                                             <children>
+                                                <FontAwesomeIcon fill="#0d0d0d" glyphName="MONEY" layoutX="14.0" layoutY="89.0" selectionFill="#363232" size="4em" />
+                                                <Label layoutX="79.0" layoutY="96.0" text="Total Income" textFill="#0b0b0b">
+                                                   <font>
+                                                      <Font name="Arial" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="dashboard_TI" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="18.0" prefHeight="17.0" prefWidth="159.0" text="\$0.0" textFill="#0b0b0b">
+                                                   <font>
+                                                      <Font name="Arial" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="615.0" layoutY="10.0" prefHeight="136.0" prefWidth="244.0" style="-fx-background-color: GRAY;">
+                                             <children>
+                                                <FontAwesomeIcon glyphName="USERS" layoutX="14.0" layoutY="92.0" selectionFill="#080808" size="4em" />
+                                                <Label layoutX="79.0" layoutY="99.0" text="Total Customers">
+                                                   <font>
+                                                      <Font name="Arial" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="dashboard_TC" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="21.0" prefHeight="17.0" prefWidth="159.0" text="0">
+                                                   <font>
+                                                      <Font name="Arial" size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="14.0" layoutY="180.0" prefHeight="338.0" prefWidth="439.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <AreaChart fx:id="dashboard_incomeChart" layoutX="-29.0" layoutY="-15.0" prefHeight="400.0" prefWidth="500.0" title="Income Chart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="-29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="-15.0">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="510.0" layoutY="180.0" prefHeight="338.0" prefWidth="349.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <AreaChart fx:id="dashboard_customerChart" layoutX="-72.0" layoutY="-16.0" prefHeight="400.0" prefWidth="400.0" title="Customer Chart">
+                                             <xAxis>
+                                                <CategoryAxis side="BOTTOM" />
+                                             </xAxis>
+                                             <yAxis>
+                                                <NumberAxis side="LEFT" />
+                                             </yAxis>
+                                          </AreaChart>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="availableBooks_form" layoutX="123.0" layoutY="118.0" prefHeight="555.0" prefWidth="899.0" style="-fx-background-color: #4682B4;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="19.0" layoutY="14.0" prefHeight="527.0" prefWidth="267.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="42.0" layoutY="158.0" text="Book ID:">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableBooks_bookID" layoutX="105.0" layoutY="145.0" styleClass="textfield" text="123" />
+                                    <Label layoutX="30.0" layoutY="224.0" text="Book Title:">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableBooks_bookTitle" layoutX="105.0" layoutY="219.0" styleClass="textfield" text="Meditation" />
+                                    <Label layoutX="50.0" layoutY="262.0" text="Author:" AnchorPane.leftAnchor="50.0">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableBooks_author" layoutX="105.0" layoutY="257.0" styleClass="textfield" text="sohel" />
+                                    <Label layoutX="52.0" layoutY="297.0" text="Genre:">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableBooks_genre" layoutX="105.0" layoutY="292.0" styleClass="textfield" text="commedy" />
+                                    <Label layoutX="14.0" layoutY="332.0" text="Published Date:">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="availableBooks_date" layoutX="125.0" layoutY="327.0" prefHeight="25.0" prefWidth="129.0" promptText="12/2/23" styleClass="textfield" />
+                                    <Label layoutX="61.0" layoutY="369.0" text="Price:">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="availableBooks_price" layoutX="105.0" layoutY="364.0" promptText="\$0.0" styleClass="textfield" text="120" />
+                                    <Button fx:id="availableBooks_addBtn" layoutX="24.0" layoutY="418.0" mnemonicParsing="false" onAction="#availableBooksAdd" prefHeight="35.0" prefWidth="91.0" style="-fx-background-color: #DAA520;" styleClass="add-btn" text="Add" />
+                                    <Button fx:id="availableBooks_updateBtn" layoutX="153.0" layoutY="418.0" mnemonicParsing="false" onAction="#availableBooksUpdate" prefHeight="35.0" prefWidth="91.0" style="-fx-background-color: #A0522D;" styleClass="update-btn" text="Update" />
+                                    <Button fx:id="availableBooks_clearBtn" layoutX="24.0" layoutY="471.0" mnemonicParsing="false" onAction="#availableBooksClear" prefHeight="35.0" prefWidth="91.0" style="-fx-background-color: #FF69B4;" styleClass="clear-btn" text="Clear" />
+                                    <Button fx:id="availableBooks_deleteBtn" layoutX="153.0" layoutY="471.0" mnemonicParsing="false" onAction="#availableBooksDelete" prefHeight="35.0" prefWidth="91.0" style="-fx-background-color: #B22222;" styleClass="delete-btn" text="Delete" />
+                                    <TextField fx:id="availableBooks_quantity" layoutX="105.0" layoutY="183.0" styleClass="textfield" text="123" />
+                                    <Label layoutX="37.0" layoutY="188.0" prefHeight="16.0" prefWidth="68.0" text="Quantity:">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="304.0" layoutY="14.0" prefHeight="527.0" prefWidth="581.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="availableBooks_search" layoutX="14.0" layoutY="14.0" onKeyTyped="#availableBooksSearch" prefHeight="30.0" prefWidth="293.0" promptText="Search" styleClass="search" />
+                                    <FontAwesomeIcon fill="#8a8a8a" glyphName="SEARCH" layoutX="21.0" layoutY="35.0" size="1.5em" />
+                                    <TableView fx:id="availableBooks_tableView" layoutX="13.0" layoutY="61.0" onKeyTyped="#availableBooksSearch" onMouseClicked="#availableBooksSelect" prefHeight="452.0" prefWidth="555.0" style="-fx-background-color: #FF69B4;">
+                                       <columns>
+                                          <TableColumn fx:id="availableBooks_col_bookID" prefWidth="75.0" text="Book ID" />
+                                          <TableColumn fx:id="availableBooks_col_bookTItle" prefWidth="101.0" text="Book Title" />
+                                          <TableColumn fx:id="availableBooks_col_author" prefWidth="94.0" text="Author" />
+                                          <TableColumn fx:id="availableBooks_col_genre" prefWidth="97.0" text="Genre" />
+                                          <TableColumn fx:id="availableBooks_col_date" prefWidth="106.0" text="Published Date" />
+                                          <TableColumn fx:id="availableBooks_col_price" prefWidth="81.0" text="Price ($)" />
+                                          <TableColumn fx:id="availableBooks_col_quantity" prefWidth="75.0" text="Quantity" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="purchase_form" layoutX="51.0" layoutY="45.0" prefHeight="555.0" prefWidth="899.0" style="-fx-background-color: #4682B4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="13.0" layoutY="16.0" prefHeight="523.0" prefWidth="874.0">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane prefHeight="214.0" prefWidth="874.0">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <Label layoutX="68.0" layoutY="27.0" text="Book ID:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="purchase_bookID" layoutX="134.0" layoutY="23.0" onAction="#purchaseBookId" prefWidth="150.0" promptText="Choose..." style="-fx-background-color: #C0C0C0;" styleClass="textfield" />
+                                          <Label layoutX="55.0" layoutY="65.0" text="Book Title:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox fx:id="purchase_bookTitle" layoutX="134.0" layoutY="61.0" onAction="#purchaseBookTitle" prefWidth="150.0" promptText="Choose..." style="-fx-background-color: #C0C0C0;" styleClass="textfield" />
+                                          <Spinner fx:id="purchase_quantity" editable="true" layoutX="135.0" layoutY="95.0" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #C0C0C0;" />
+                                          <Label layoutX="284.0" layoutY="166.0" text="Total: ">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="purchase_total" layoutX="335.0" layoutY="168.0" prefHeight="23.0" prefWidth="168.0">
+                                             <font>
+                                                <Font name="Arial" size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="purchase_addBtn" layoutX="313.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#purchaseAdd" prefHeight="37.0" prefWidth="94.0" style="-fx-background-color: #4169E1;" styleClass="add-btn" text="Add" />
+                                          <AnchorPane layoutX="492.0" prefHeight="214.0" prefWidth="382.0" styleClass="info">
+                                             <children>
+                                                <Label layoutX="48.0" layoutY="23.0" text="Book ID: ">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="purchase_info_bookID" layoutX="108.0" layoutY="24.0" prefHeight="20.0" prefWidth="124.0" styleClass="info-label">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="31.0" layoutY="58.0" text="Book Title:">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="purchase_info_bookTItle" layoutX="108.0" layoutY="58.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="54.0" layoutY="97.0" text="Author:" AnchorPane.topAnchor="91.0">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="purchase_info_author" layoutX="108.0" layoutY="87.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label" AnchorPane.topAnchor="92.0">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="57.0" layoutY="126.0" text="Genre:">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="purchase_info_genre" layoutX="108.0" layoutY="126.0" prefHeight="20.0" prefWidth="257.0" styleClass="info-label">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="34.0" layoutY="159.0" text="Pub Date:">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="purchase_info_date" layoutX="108.0" layoutY="159.0" prefHeight="20.0" prefWidth="153.0" styleClass="info-label">
+                                                   <font>
+                                                      <Font name="Arial" size="17.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <Button fx:id="purchase_payBtn" layoutX="81.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#payButtonClicked" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #9932CC;" styleClass="add-btn" text="Pay" />
+                                          <Label layoutX="62.0" layoutY="99.0" text="Quantity:">
+                                             <font>
+                                                <Font name="Arial" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <TableView fx:id="purchase_tableView" layoutX="12.0" layoutY="232.0" prefHeight="277.0" prefWidth="850.0">
+                                       <columns>
+                                          <TableColumn fx:id="purchase_col_bookID" prefWidth="75.0" text="Book ID" />
+                                          <TableColumn fx:id="purchase_col_bookTitle" prefWidth="119.20000457763672" text="Book Title" />
+                                          <TableColumn fx:id="purchase_col_author" minWidth="8.0" prefWidth="92.0" text="Author" />
+                                          <TableColumn fx:id="purchase_col_quantity" minWidth="0.0" prefWidth="75.20001220703125" text="Quantity" />
+                                          <TableColumn fx:id="purchase_col_price" minWidth="0.0" prefWidth="180.80007934570312" text="Price ($)" />
+                                          <TableColumn fx:id="purchase_col_publish_date" minWidth="8.0" prefWidth="143.99993896484375" text="Published Date" />
+                                          <TableColumn fx:id="purchase_col_genre" minWidth="8.0" prefWidth="162.4000244140625" text="Genre" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

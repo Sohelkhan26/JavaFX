@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.new_login_page.HelloController">
+    <left>
+        <AnchorPane style="-fx-background-color: navy blue;" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" layoutY="122.0" prefHeight="18.0" prefWidth="230.0" text="BOOKaHOLICS" textFill="#f2ecec">
+                    <font>
+                        <Font name="Verdana Bold" size="24.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Label>
+                <Label alignment="CENTER" layoutX="3.0" layoutY="172.0" prefHeight="18.0" prefWidth="230.0" text="KUET" textFill="#7e5624">
+                    <font>
+                        <Font name="Times New Roman" size="24.0" />
+                    </font>
+                    <effect>
+                        <Blend />
+                    </effect>
+                </Label>
+                <Line endX="100.0" layoutX="115.0" layoutY="163.0" startX="-100.0" stroke="#e7d2d2" strokeLineCap="BUTT" strokeType="OUTSIDE" />
+                <Circle fill="DODGERBLUE" layoutX="118.0" layoutY="152.0" opacity="0.18" radius="100.0" stroke="#0b0202" strokeType="INSIDE">
+                    <effect>
+                        <Glow level="1.0" />
+                    </effect>
+                </Circle>
+                <Circle fill="DODGERBLUE" layoutX="58.0" layoutY="76.0" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
+                <Label alignment="CENTER" layoutX="5.0" layoutY="330.0" prefHeight="18.0" prefWidth="230.0" text="Copyright (c). All Rights Reserved" textFill="#f2ecec">
+                    <font>
+                        <Font name="Symbol" size="10.0" />
+                    </font>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </Label>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="424.0" prefWidth="399.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="usernameTextFieldSignUp" layoutX="129.0" layoutY="132.0" prefHeight="26.0" prefWidth="201.0" promptText="Username" text="sohel" />
+                <Label layoutX="31.0" layoutY="136.0" prefHeight="18.0" prefWidth="76.0" text="Username">
+                    <font>
+                        <Font name="Verdana Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="31.0" layoutY="184.0" prefHeight="18.0" prefWidth="76.0" text="Password">
+                    <font>
+                        <Font name="Verdana Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="100.0" layoutY="65.0" prefHeight="18.0" prefWidth="143.0" text="Secure SignUp" textAlignment="JUSTIFY">
+                    <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Button fx:id="signUpButton" alignment="CENTER" layoutX="31.0" layoutY="229.0" mnemonicParsing="false" onAction="#signUpButtonClicked" prefHeight="30.0" prefWidth="301.0" style="-fx-background-color: navy blue;" text="SignUp" textFill="#efe6e6" />
+                <PasswordField fx:id="passwordPasswordFieldSignUp" layoutX="128.0" layoutY="180.0" prefHeight="26.0" prefWidth="202.0" promptText="Password" text="1234" />
+                <Button fx:id="cancelButton" alignment="CENTER" layoutX="31.0" layoutY="277.0" mnemonicParsing="false" onAction="#setCancelButtonClicked" prefHeight="30.0" prefWidth="301.0" style="-fx-background-color: navy blue;" text="Cancel" textFill="#efeaea" />
+                <Label fx:id="messageLabelSignUp" alignment="CENTER" layoutX="43.0" layoutY="99.0" prefHeight="18.0" prefWidth="277.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Label>
+                <Label layoutX="121.0" layoutY="101.0">
+                    <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

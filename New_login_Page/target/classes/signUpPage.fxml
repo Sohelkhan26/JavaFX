@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpPage">
+   <children>
+      <TextField fx:id="usernameTextField" alignment="CENTER" layoutX="43.0" layoutY="24.0" promptText="Username:" />
+      <TextField fx:id="fullnameTextField" alignment="CENTER" layoutX="43.0" layoutY="66.0" promptText="Full Name:" />
+      <TextField fx:id="emailTextField" alignment="CENTER" layoutX="43.0" layoutY="113.0" promptText="Email:" />
+      <CheckBox fx:id="maleCheckBox" layoutX="114.0" layoutY="159.0" mnemonicParsing="false" text="Male" />
+      <CheckBox fx:id="femaleCheckBox" layoutX="174.0" layoutY="159.0" mnemonicParsing="false" text="Female" />
+      <Label layoutX="45.0" layoutY="159.0" text="Gender:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUpButton" layoutX="218.0" layoutY="221.0" mnemonicParsing="false" onAction="#goToProfile" text="Sign Up" textAlignment="CENTER" textFill="#7b1212" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="canelButton" layoutX="289.0" layoutY="221.0" mnemonicParsing="false" onAction="#cancelButtonClicked" text="Cancel">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="goBackToLoginPage" layoutX="209.0" layoutY="258.0" mnemonicParsing="false" onAction="#goBack" text="Go Back to Login Page" textAlignment="CENTER" textFill="#7b1212" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
